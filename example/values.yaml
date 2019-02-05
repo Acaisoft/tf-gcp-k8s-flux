@@ -1,0 +1,14 @@
+rbac:
+  create: true
+
+helmOperator:
+  create: true
+  createCRD: true
+
+git:
+# git url like git@bitbucket.org:<profile>/<repo>
+  url: 
+
+# to use fluxcloud add :
+#additionalArgs:
+# - --connect=ws://fluxcloud
