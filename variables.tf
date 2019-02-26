@@ -22,3 +22,13 @@ variable "gke_cluster_remote_state" {
   type        = "map"
   description = "GKE cluster remote state parameters"
 }
+
+# Parameters authorized:
+# github_url (mandatory)
+# slack_channel  (mandatory)
+# slack_url (mandatory)
+# slack_username (default: "Flux CD")
+variable "fluxcloud" {
+  type        = "map"
+  description = "Flux cloud configuration"
+}
