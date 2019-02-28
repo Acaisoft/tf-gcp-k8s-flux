@@ -66,6 +66,7 @@ resource "kubernetes_service" "fluxcloud" {
       protocol = "TCP"
     }
   }
+  depends_on = ["helm_release.flux"]
 }
 
 resource "kubernetes_deployment" "fluxcloud" {
@@ -126,4 +127,5 @@ resource "kubernetes_deployment" "fluxcloud" {
       }
     }
   }
+  depends_on = ["helm_release.flux"]
 }
