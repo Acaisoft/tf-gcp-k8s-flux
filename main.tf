@@ -80,7 +80,7 @@ resource "kubernetes_deployment" "fluxcloud" {
   spec {
     replicas = 1
     strategy {
-      type = "Recreate"
+      type = "RollingUpdate"
     }
     selector {
       match_labels {
