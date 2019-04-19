@@ -1,6 +1,7 @@
 # Parameters authorized:
 # version (default: v2.11.0)
 # values (default: values.yaml)
+# chart-version (default: 0.9.1)
 variable "helm" {
   type        = "map"
   description = "Helm provider parameters"
