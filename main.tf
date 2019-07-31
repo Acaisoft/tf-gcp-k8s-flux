@@ -40,12 +40,12 @@ provider "helm" {
 
 resource "helm_repository" "flux" {
     name = "flux"
-    url  = "https://weaveworks.github.io/flux"
+    url  = "https://fluxcd.github.io/flux"
 }
 resource "helm_release" "flux" {
     name      = "flux"
     chart     = "weaveworks/flux"
-    version   = "${lookup(var.helm, "chart-version", "0.9.1")}"
+    version   = "${lookup(var.helm, "chart-version", "0.11.0")}"
     namespace = "flux"
     values = [
         "${file(lookup(var.helm, "values", "values.yaml"))}"
