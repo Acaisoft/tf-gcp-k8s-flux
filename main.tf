@@ -44,7 +44,7 @@ resource "helm_repository" "flux" {
 }
 resource "helm_release" "flux" {
     name      = "flux"
-    chart     = "weaveworks/flux"
+    chart     = "fluxcd/flux"
     version   = "${lookup(var.helm, "chart-version", "0.11.0")}"
     namespace = "flux"
     values = [
