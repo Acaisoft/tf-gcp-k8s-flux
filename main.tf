@@ -45,7 +45,7 @@ resource "helm_repository" "flux" {
 resource "helm_release" "flux" {
     name      = "flux"
     chart     = "fluxcd/flux"
-    version   = "${lookup(var.helm, "chart-version", "0.14.1")}"
+    version   = "${lookup(var.helm, "chart-version", "0.14.2")}"
     namespace = "flux"
     values = [
         "${file(lookup(var.helm, "values", "values.yaml"))}"
@@ -97,7 +97,7 @@ resource "kubernetes_deployment" "fluxcloud" {
       spec {
         container {
           name  = "fluxcloud"
-          image = "justinbarrick/fluxcloud:v0.3.4"
+          image = "justinbarrick/fluxcloud:v0.3.8"
           image_pull_policy = "IfNotPresent"
           port {
             container_port = "3032"
