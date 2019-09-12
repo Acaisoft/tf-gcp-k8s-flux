@@ -45,7 +45,7 @@ resource "helm_repository" "flux" {
 resource "helm_release" "flux" {
     name      = "flux"
     chart     = "fluxcd/flux"
-    version   = "${lookup(var.helm, "chart-version", "0.14.2")}"
+    version   = "${lookup(var.helm, "chart-version", "0.14.1")}"
     namespace = "flux"
     values = [
         "${file(lookup(var.helm, "values", "values.yaml"))}"
